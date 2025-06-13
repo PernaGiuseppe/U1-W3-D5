@@ -184,9 +184,27 @@ console.log(whatDayIsIt())
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
-// const isTodayMyBirthday = () => {
-//   if()
-// }
+
+const isTodayMyBirthday = () => {
+  const birthdayMonth = 10
+  const birthdayDay = 20
+
+  const currentMonth = today.getMonth()
+  const currentDay = today.getDate()
+
+  if (currentMonth === birthdayMonth && currentDay === birthdayDay) {
+    return true
+  } else {
+    return false
+  }
+}
+const itsTheDay = isTodayMyBirthday()
+
+if (itsTheDay) {
+  console.log('AUGURIIII!!!')
+} else {
+  console.log('SadLife ;(')
+}
 
 // Arrays & Oggetti
 
@@ -263,15 +281,12 @@ const sumAllTheYears = () => {
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
-const filmconLord = []
+
 const filmconAvengers = []
 const altriFilm = []
 
 const searchByTitle = (stringa) => {
   for (let i = 0; i < movies.length; i++) {
-    if (movies[i].Title.includes(stringa)) {
-      filmconLord.push(movies[i].Title)
-    }
     if (movies[i].Title.includes(stringa)) {
       filmconAvengers.push(movies[i].Title)
     } else {
@@ -279,7 +294,8 @@ const searchByTitle = (stringa) => {
     }
   }
 }
-// searchByTitle("stringadacercare") //same
+// searchByTitle("Avengers") //same
+
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
